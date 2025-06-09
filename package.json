@@ -1,0 +1,20 @@
+{
+  "name": "assignment-mfa-ts",
+  "version": "1.0.0",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "dev:dashboard": "cd dashboard && npm run dev",
+    "dev:main": "cd main-layout && npm run dev",
+    "dev:users": "cd users && npm run dev",
+    "dev": "npm run dev:dashboard & npm run dev:users & npm run dev:main",
+    "install:dashboard": "cd dashboard && npm install",
+    "install:main": "cd main-layout && npm install",
+    "install:users": "cd users && npm install",
+    "install": "npm run install:main && npm run install:dashboard && npm run install:users",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dilshan",
+  "license": "ISC",
+  "description": ""
+}
