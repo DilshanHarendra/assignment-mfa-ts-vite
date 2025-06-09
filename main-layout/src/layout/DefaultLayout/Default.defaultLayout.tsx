@@ -1,7 +1,7 @@
 import Sidebar from './Sidebar.defaultLayout.tsx';
 import Header from './Header.defaultLayout.tsx';
 import { useEffect, useLayoutEffect, useState } from 'react';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { setUser } from '@/store/reducers/users/users.reducer.ts';
 import { UserI } from '@/store/reducers/users/types.ts';
@@ -16,6 +16,7 @@ const user: UserI = {
 const DefaultDefaultLayout = () => {
   const dispatch = useDispatch();
   const [isOpenSideBar, setIsOpenSidebar] = useState(false);
+  const navigate = useNavigate();
 
   useLayoutEffect(() => {
     const updateWidth = () => {
@@ -32,6 +33,7 @@ const DefaultDefaultLayout = () => {
 
   useEffect(() => {
     dispatch(setUser(user));
+    navigate('/dashboard');
   }, []);
 
   return (
